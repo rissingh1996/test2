@@ -21,13 +21,13 @@ jobs:
       with:
         java-version: '8'
 
-    - name: Build with Maven
-      run: mvn clean install
+    - name: Build with Gradle
+      run: gradle build
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
-        name: java-app
+        name: demo2-0.0.1-SNAPSHOT
         path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
